@@ -9,7 +9,7 @@ class CompanyController extends Controller
 {
     public function index(Request $request)
     {
-        return company::orderBy('created_at','DESC')->get();
+        return company::orderBy('created_at','DESC')->get()->paginate(10);
     }
 
     public function store(Request $request)
